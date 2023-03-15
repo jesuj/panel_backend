@@ -1,0 +1,39 @@
+{
+  "name": "panel_backend",
+  "version": "1.0.0",
+  "description": "Base for panel",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "npm start"
+  ],
+  "author": "Angel Jesus Oni Terceros",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "nodemon": "2.0.21",
+    "standard": "17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "estandard"
+  },
+  "standard": {
+    "ignore": [
+      "/base_db/",
+      "/node_modules"
+    ]
+  },
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "mysql2": "3.2.0",
+    "sequelize": "6.29.0"
+  }
+}
