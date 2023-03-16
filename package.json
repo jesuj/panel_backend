@@ -17,7 +17,7 @@
   "author": "Angel Jesus Oni Terceros",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^8.0.0",
+    "husky": "8.0.0",
     "nodemon": "2.0.21",
     "standard": "17.0.0"
   },
