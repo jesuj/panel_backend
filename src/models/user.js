@@ -1,7 +1,6 @@
 import { DataTypes } from 'sequelize'
-import { sequelize } from '../config/db.js'
-import { Customer } from './customer.js'
-import { Rol } from './rol.js'
+import { sequelize } from '#config/db.js'
+import { Customer, Rol } from './index.js'
 
 export const User = sequelize.define(
   'User',
@@ -16,7 +15,7 @@ export const User = sequelize.define(
       allowNull: false
     },
     password: {
-      type: DataTypes.STRING(30),
+      type: DataTypes.STRING,
       allowNull: false
     },
     email: DataTypes.STRING(50),

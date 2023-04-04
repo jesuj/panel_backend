@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize'
-import { sequelize } from '../config/db.js'
-import { Menu } from './menu.js'
+import { sequelize } from '#config/db.js'
+import { Menu } from './index.js'
 
 export const Submenu = sequelize.define(
   'Submenu',
@@ -14,14 +14,9 @@ export const Submenu = sequelize.define(
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    read: {
-      type: DataTypes.BOOLEAN
-    },
-    write: {
-      type: DataTypes.BOOLEAN
-    },
-    view: {
-      type: DataTypes.BOOLEAN
+    name_key: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     },
     url: {
       type: DataTypes.STRING,

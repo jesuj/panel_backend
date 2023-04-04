@@ -11,5 +11,5 @@ services:
     volumes:
       - ./base_db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=base_db
-      - MYSQL_DATABASE=base_db
+      - MYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_DATABASE=${DATABSE_NAME}

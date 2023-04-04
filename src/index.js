@@ -1,8 +1,10 @@
-import express from 'express'
+import { sequelize } from '#config/db.js'
+import routesWeb from '#routesWeb/index.js'
+import routesMobile from '#routesMobile/index.js'
+import '#models/index.js'
 
-import { sequelize } from './config/db.js'
-import routes from './routes/index.js'
-import './modules/index.js'
+import express from 'express'
+import cors from 'cors'
 
 export class Server {
   constructor () {
@@ -10,17 +12,19 @@ export class Server {
     this.port = process.env.PORT || 8084
     this.connectDB()
     this.middlewares()
-    this.app.use('/api', routes)
+    this.app.use('/api/web', routesWeb)
+    this.app.use('/api/mobile', routesMobile)
   }
 
   middlewares () {
+    this.app.use(cors())
     this.app.use(express.json())
   }
 
   async connectDB () {
     try {
-      await sequelize.sync({ force: true });
-      // await sequelize.sync()
+      // await sequelize.sync({ force: true })
+      await sequelize.sync()
       // await sequelize.authenticate();
       console.log('Database runing 🚀🚀')
     } catch (error) {

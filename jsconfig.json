@@ -1,0 +1,27 @@
+{
+  "exclude": [ "node_modules", ".husky", "base_db" ],
+  "include": [ "src", "app.js" ],
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "module": "ES2022",
+    "target": "es2022",
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "paths": {
+      "#config/*": ["config/*"],
+      "#controllers/*": ["controllers/*"],
+      "#middlewares/*": ["middlewares/*"],
+      "#models/*": ["models/*"],
+      "#routesWeb/*": ["routes/web/*"],
+      "#routesMobile/*": ["routes/mobile/*"],
+      "#services/*": ["services/*"],
+      "#validations/*": ["validations/*"],
+      "#helpers/*" : ["helpers/*"]
+    },
+    "types": [
+      "node",
+      "express",
+      "sequelize"
+    ],  
+  }
+}

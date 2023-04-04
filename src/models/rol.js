@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize'
-import { sequelize } from '../config/db.js'
+import { sequelize } from '#config/db.js'
 
-export const Menu = sequelize.define(
-  'Menu',
+export const Rol = sequelize.define(
+  'Rol',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,12 +13,13 @@ export const Menu = sequelize.define(
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    icon: {
-      type: DataTypes.STRING
-    },
     deleted: {
       type: DataTypes.TINYINT(1),
       defaultValue: 0
     }
+  },
+  {
+    freezeTableName: true,
+    tableName: 'Roles'
   }
 )
